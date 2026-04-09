@@ -3,6 +3,14 @@ package src.bgu.spl.assig1;
 public class Monomial {
     private int exponent;
     private Scalar coefficient;
+    
+    public int getExponent() {
+        return exponent;
+    }
+
+    public Scalar getCoefficient() {
+        return coefficient;
+    }
 
     public Monomial(int exponent, Scalar coefficient) {
         this.exponent = exponent;
