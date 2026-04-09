@@ -14,10 +14,13 @@ public class RationalScalar implements Scalar{
 
     }
     public Scalar neg(){
-
+            this.numerator = -this.numerator;
+            return this;
     }
     public Scalar power(int exponent){
-
+        this.numerator = (int) Math.pow(this.numerator, exponent);
+        this.denominator = (int) Math.pow(this.denominator, exponent);
+        return this;
     }
     public boolean equals(Object o){
 
