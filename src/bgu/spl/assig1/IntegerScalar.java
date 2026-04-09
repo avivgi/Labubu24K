@@ -24,6 +24,6 @@ public class IntegerScalar implements Scalar{
 
     }
     public int sign(){
-        
+        return Integer.signum(number);
     }
 }

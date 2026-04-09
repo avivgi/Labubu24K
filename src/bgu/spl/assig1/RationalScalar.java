@@ -25,6 +25,9 @@ public class RationalScalar implements Scalar{
     public String toString(){
         
     }
+    public int sign(){
+        return Integer.signum(numerator) * Integer.signum(denominator);
+    }
     public Scalar reduce(){
 
     }
