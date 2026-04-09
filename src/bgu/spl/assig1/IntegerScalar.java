@@ -23,4 +23,7 @@ public class IntegerScalar implements Scalar{
     public String toString(){
 
     }
+    public int sign(){
+        
+    }
 }
