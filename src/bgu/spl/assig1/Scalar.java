@@ -7,4 +7,9 @@ public interface Scalar {
     int sign();
     boolean equals(Object o);
     String toString();
+        //helper methods to avoid casting
+    Scalar addInteger(IntegerScalar s);
+    Scalar addRational(RationalScalar s);
+    Scalar mulInteger(IntegerScalar s);
+    Scalar mulRational(RationalScalar s);
 }
