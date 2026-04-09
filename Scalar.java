@@ -17,4 +17,7 @@ public abstract class Scalar{
     public boolean equals(Object o){
         return false;
     }
+    public String toString(){
+        return null;
+    }
 }
