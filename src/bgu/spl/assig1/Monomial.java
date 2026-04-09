@@ -29,11 +29,11 @@ public class Monomial{
         return this.coefficient.sign();
     }
     public boolean equals(Object o){
-        if(!o instanceof Monomial){
-            return false;
+        if(o instanceof Monomial){
+            o = (Monomial) o;
+            return this.exponent == o.exponent && this.coefficient.equals(o.coefficient);
         }
-        o = (Monomial) o;
-        return this.exponent == o.exponent && this.coefficient.equals(o.coefficient);
+        return false;
     }
     public String toString(){
         if(exponent == 0){
