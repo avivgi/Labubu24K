@@ -37,13 +37,13 @@ public class RationalScalar implements Scalar{
         return new RationalScalar(this.numerator * s.getNumber(), this.denominator).reduce();
     }
     public Scalar neg(){
-            this.numerator = -this.numerator;
-            return this;
+        int n = -this.numerator;
+            return new RationalScalar(n, this.denominator).reduce();
     }
     public Scalar power(int exponent){
-        this.numerator = (int) Math.pow(this.numerator, exponent);
-        this.denominator = (int) Math.pow(this.denominator, exponent);
-        return this;
+        int n = (int) Math.pow(this.numerator, exponent);
+        int d = (int) Math.pow(this.denominator, exponent);
+        return new RationalScalar(n, d).reduce();
     }
     public boolean equals(Object o){
         if(o instanceof RationalScalar){
