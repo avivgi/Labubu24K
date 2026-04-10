@@ -57,6 +57,7 @@ public class Tester {
         System.out.println("Build: 1 2 3 | Expected: 1+2x+3x^2 | Actual: " + p1);
         System.out.println("Build with Rationals: 0 1/2 -5/3 | Expected: 1/2x-5/3x^2 | Actual: " + Polynomial.build("0 1/2 -5/3"));
         System.out.println("Add: (1+2x+3x^2) + (x+x^2) | Expected: 1+3x+4x^2 | Actual: " + p1.add(p2));
+        System.out.println("Mul: (1+x) * (2) | Expected: 2+2x | Actual: " + Polynomial.build("1 1").mul(Polynomial.build("2")));
         System.out.println("Evaluate: 1+2x+3x^2 at x=2 | Expected: 17 | Actual: " + p1.evaluate(new IntegerScalar(2)));
         System.out.println("Derivative: d/dx(1+2x+3x^2) | Expected: 2+6x | Actual: " + p1.derivative());
         System.out.println("Equals: p1 == p1 | Expected: true | Actual: " + p1.equals(Polynomial.build("1 2 3")));

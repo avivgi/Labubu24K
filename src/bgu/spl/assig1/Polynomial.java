@@ -57,6 +57,34 @@ public class Polynomial {
         return result;
     }
 
+    public Polynomial mul(Polynomial p) {
+    Polynomial result = new Polynomial();
+    for (Monomial m1 : this.monomials) {
+        for (Monomial m2 : p.monomials) {
+            Monomial product = m1.mul(m2);
+                        result.addMonomial(product);
+        }
+    }
+    return result;
+}
+
+    private void addMonomial(Monomial m) {
+    if (m.sign() == 0) return; 
+
+    for (int i = 0; i < this.monomials.size(); i++) {
+        Monomial existing = this.monomials.get(i);
+        if (existing.getExponent() == m.getExponent()) {
+            Monomial combined = existing.add(m);
+            if (combined.sign() == 0) {
+                this.monomials.remove(i);
+            } else {
+                this.monomials.set(i, combined);
+            }
+            return;
+        }
+    }
+    this.monomials.add(m);
+}
     public Scalar evaluate(Scalar s) {
         Scalar total = new IntegerScalar(0);
         for (Monomial m : monomials) {
